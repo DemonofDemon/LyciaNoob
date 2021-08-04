@@ -25,7 +25,7 @@ ENV PATH="/home/bot/bin:$PATH"
 RUN git clone https://github.com/Theheirofzeus/shit .
 
 # Install requirements
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r ./requirements.txt
 
 # Starting Worker
 CMD ["python3","__main__.py"]
