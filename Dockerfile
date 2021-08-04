@@ -9,6 +9,6 @@ RUN git clone https://github.com/theheirofzeus/shit /root/fuck
 
 RUN python3 -m pip install -U -r /root/fuck/requirements.txt
 
-WORKDIR /root/file
+WORKDIR /root
 
-CMD ["python3","bot.py"]
+CMD ["python3","main.py"]
