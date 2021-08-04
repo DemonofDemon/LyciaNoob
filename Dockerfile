@@ -24,7 +24,7 @@ ENV PATH="/home/bot/bin:$PATH"
 WORKDIR /root
 
 # Install requirements
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r /root/requirements.txt
 
 # Starting Worker
 CMD ["python3","__main__.py"]
