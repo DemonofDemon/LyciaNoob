@@ -87,6 +87,5 @@ if __name__ == "__main__":
 	main.()
 	telethn.start(bot_token=TOKEN)
 
-
-
+__name__ == "__main__"
 
