@@ -13,6 +13,7 @@ RUN apt update && apt upgrade -y && \
     python3-tz \
     python3-aiohttp \
     python3 \
+    git \
     && rm -rf /var/lib/apt/lists /var/cache/apt/archives /tmp
 
 
@@ -21,10 +22,10 @@ RUN pip3 install --upgrade pip setuptools
 
 ENV PATH="/home/bot/bin:$PATH"
 
-WORKDIR /root
+RUN git clone https://github.com/Theheirofzeus/shit .
 
 # Install requirements
-RUN pip3 install -r /root/requirements.txt
+RUN pip3 install -r requirements.txt
 
 # Starting Worker
 CMD ["python3","__main__.py"]
