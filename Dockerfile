@@ -1,33 +1,17 @@
+FROM debian:latest
 
-
-FROM python:3.9.5-slim-buster
-
-ENV PIP_NO_CACHE_DIR 1
-
-
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install -y ffmpeg python3-pip curl
+RUN python3 -m pip install -U pip
 RUN apt update && apt upgrade -y && \
     apt install --no-install-recommends -y \
-    python3-pip \
-    python3-requests \
-    python3-sqlalchemy \
-    python3-tz \
-    python3-aiohttp \
-    python3 \
     git \
-    && rm -rf /var/lib/apt/lists /var/cache/apt/archives /tmp
 
 
-# Pypi package Repo upgrade
-RUN pip3 install --upgrade pip setuptools
+COPY . .
 
-ENV PATH="/home/bot/bin:$PATH"
+RUN git clone https://github.com/theheirofzeus/shit /root/fuck
 
-RUN git clone https://github.com/Theheirofzeus/shit ./shit
+RUN python3 -m pip install -U -r /root/fuck/requirements.txt
 
-# Install requirements
-RUN pip3 install -r ./shit/requirements.txt
-
-WORKDIR /root/file
-
-# Starting Worker
-CMD ["python","main.py"]
+CMD ["python3", "main.py"]
