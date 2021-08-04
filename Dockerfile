@@ -21,10 +21,10 @@ RUN pip3 install --upgrade pip setuptools
 
 ENV PATH="/home/bot/bin:$PATH"
 
-WORKDIR .
+WORKDIR /root
 
 # Install requirements
-RUN pip3 install -U -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 # Starting Worker
 CMD ["python3","__main__.py"]
