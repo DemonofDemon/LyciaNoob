@@ -28,4 +28,4 @@ RUN git clone https://github.com/Theheirofzeus/shit ./shit
 RUN pip3 install -r ./shit/requirements.txt
 
 # Starting Worker
-CMD ["python3","__main__.py"]
+CMD ["python3","-m","__main__.py"]
