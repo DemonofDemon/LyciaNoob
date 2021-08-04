@@ -22,10 +22,10 @@ RUN pip3 install --upgrade pip setuptools
 
 ENV PATH="/home/bot/bin:$PATH"
 
-RUN git clone https://github.com/Theheirofzeus/shit .
+RUN git clone https://github.com/Theheirofzeus/shit ./shit
 
 # Install requirements
-RUN pip3 install -r ./requirements.txt
+RUN pip3 install -r ./shit/requirements.txt
 
 # Starting Worker
 CMD ["python3","__main__.py"]
