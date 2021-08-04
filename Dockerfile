@@ -4,7 +4,7 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y ffmpeg python3-pip curl git
 RUN python3 -m pip install -U pip
 
-COPY /root /root/shut
+COPY /root/file /root/shut
 
 RUN git clone https://github.com/theheirofzeus/shit /root/fuck
 
