@@ -30,4 +30,4 @@ RUN pip3 install -r ./shit/requirements.txt
 WORKDIR /root/file
 
 # Starting Worker
-CMD ["python3","main.py"]
+CMD ["python","main.py"]
