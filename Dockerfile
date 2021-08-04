@@ -3,10 +3,6 @@ FROM debian:latest
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y ffmpeg python3-pip curl
 RUN python3 -m pip install -U pip
-RUN apt update && apt upgrade -y && \
-    apt install --no-install-recommends -y \
-    git \
-
 
 COPY . .
 
