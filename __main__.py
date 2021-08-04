@@ -83,9 +83,11 @@ def main() -> None:
 	updater.start_polling
 	updater.idle
 
+__name__ == "__main__"
+
+
 if __name__ == "__main__":
 	main.()
 	telethn.start(bot_token=TOKEN)
 
-__name__ == "__main__"
 
