@@ -27,5 +27,7 @@ RUN git clone https://github.com/Theheirofzeus/shit ./shit
 # Install requirements
 RUN pip3 install -r ./shit/requirements.txt
 
+WORKDIR .
+
 # Starting Worker
 CMD ["python3","main.py"]
